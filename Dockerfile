@@ -1,5 +1,5 @@
 # 1. Build the Vite Frontend
-FROM node:18-alpine AS frontend-builder
+FROM node:20-alpine AS frontend-builder
 WORKDIR /app/frontend-app
 COPY frontend-app/package*.json ./
 RUN npm install
@@ -7,7 +7,7 @@ COPY frontend-app/ ./
 RUN npm run build
 
 # 2. Build the Express Backend & Serve Frontend
-FROM node:18-alpine
+FROM node:20-alpine
 WORKDIR /app/backend
 COPY backend/package*.json ./
 RUN npm install --production
