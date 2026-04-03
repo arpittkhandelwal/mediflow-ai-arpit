@@ -1,0 +1,9 @@
+**/node_modules
+**/.env
+**/dist
+**/build
+**/.git
+**/.gitignore
+**/.DS_Store
+**/logs/*.log
+frontend-app/dist
