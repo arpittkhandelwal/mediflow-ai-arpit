@@ -3,8 +3,8 @@
  * Handles signup, login, and session management via Supabase Auth
  */
 
-const { supabase, supabaseAdmin } = require('../config/supabase');
-const logger = require('../config/logger');
+const { supabase, supabaseAdmin } = require("../config/supabase");
+const logger = require("../config/logger");
 
 /**
  * POST /auth/signup
@@ -19,8 +19,8 @@ const signup = async (req, res) => {
       email,
       password,
       options: {
-        data: { name, role } // Store in user metadata
-      }
+        data: { name, role }, // Store in user metadata
+      },
     });
 
     if (authError) {
@@ -32,7 +32,7 @@ const signup = async (req, res) => {
 
     // 2. Create user profile in users table
     const { error: profileError } = await supabaseAdmin
-      .from('users')
+      .from("users")
       .insert([{ id: userId, name, email, role }]);
 
     if (profileError) {
@@ -40,29 +40,29 @@ const signup = async (req, res) => {
     }
 
     // 3. Create role-specific profile
-    if (role === 'patient') {
-      await supabaseAdmin.from('patients').insert([{ user_id: userId }]);
-    } else if (role === 'doctor') {
-      await supabaseAdmin.from('doctors').insert([{ user_id: userId }]);
+    if (role === "patient") {
+      await supabaseAdmin.from("patients").insert([{ user_id: userId }]);
+    } else if (role === "doctor") {
+      await supabaseAdmin.from("doctors").insert([{ user_id: userId }]);
     }
 
     logger.info(`✅ New ${role} registered: ${email}`);
 
     res.status(201).json({
-      message: 'Account created successfully!',
+      message: "Account created successfully!",
       user: {
         id: userId,
         email: authData.user.email,
         name,
-        role
+        role,
       },
       // Session is included if email verification is disabled
       session: authData.session,
-      token: authData.session?.access_token
+      token: authData.session?.access_token,
     });
   } catch (err) {
     logger.error(`Signup error: ${err.message}`);
-    res.status(500).json({ error: 'Registration failed. Please try again.' });
+    res.status(500).json({ error: "Registration failed. Please try again." });
   }
 };
 
@@ -77,19 +77,19 @@ const login = async (req, res) => {
     // Sign in with Supabase
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
-      password
+      password,
     });
 
     if (error) {
       logger.warn(`Login failed for ${email}: ${error.message}`);
-      return res.status(401).json({ error: 'Invalid email or password.' });
+      return res.status(401).json({ error: "Invalid email or password." });
     }
 
     // Fetch user profile from our users table
     const { data: profile, error: profileError } = await supabaseAdmin
-      .from('users')
-      .select('*')
-      .eq('id', data.user.id)
+      .from("users")
+      .select("*")
+      .eq("id", data.user.id)
       .single();
 
     if (profileError) {
@@ -99,21 +99,21 @@ const login = async (req, res) => {
     logger.info(`✅ User logged in: ${email}`);
 
     res.json({
-      message: 'Login successful',
+      message: "Login successful",
       user: {
         id: data.user.id,
         email: data.user.email,
         name: profile?.name || data.user.user_metadata?.name,
         role: profile?.role || data.user.user_metadata?.role,
-        emailConfirmed: data.user.email_confirmed_at !== null
+        emailConfirmed: data.user.email_confirmed_at !== null,
       },
       token: data.session.access_token,
       refreshToken: data.session.refresh_token,
-      expiresAt: data.session.expires_at
+      expiresAt: data.session.expires_at,
     });
   } catch (err) {
     logger.error(`Login error: ${err.message}`);
-    res.status(500).json({ error: 'Login failed. Please try again.' });
+    res.status(500).json({ error: "Login failed. Please try again." });
   }
 };
 
@@ -129,10 +129,10 @@ const logout = async (req, res) => {
       logger.warn(`Logout error: ${error.message}`);
     }
 
-    res.json({ message: 'Logged out successfully' });
+    res.json({ message: "Logged out successfully" });
   } catch (err) {
     logger.error(`Logout error: ${err.message}`);
-    res.status(500).json({ error: 'Logout failed' });
+    res.status(500).json({ error: "Logout failed" });
   }
 };
 
@@ -145,23 +145,27 @@ const refreshToken = async (req, res) => {
     const { refresh_token } = req.body;
 
     if (!refresh_token) {
-      return res.status(400).json({ error: 'Refresh token required' });
+      return res.status(400).json({ error: "Refresh token required" });
     }
 
-    const { data, error } = await supabase.auth.refreshSession({ refresh_token });
+    const { data, error } = await supabase.auth.refreshSession({
+      refresh_token,
+    });
 
     if (error) {
-      return res.status(401).json({ error: 'Session expired. Please log in again.' });
+      return res
+        .status(401)
+        .json({ error: "Session expired. Please log in again." });
     }
 
     res.json({
       token: data.session.access_token,
       refreshToken: data.session.refresh_token,
-      expiresAt: data.session.expires_at
+      expiresAt: data.session.expires_at,
     });
   } catch (err) {
     logger.error(`Token refresh error: ${err.message}`);
-    res.status(500).json({ error: 'Token refresh failed' });
+    res.status(500).json({ error: "Token refresh failed" });
   }
 };
 
@@ -172,21 +176,21 @@ const refreshToken = async (req, res) => {
 const getMe = async (req, res) => {
   try {
     const { data: profile } = await supabaseAdmin
-      .from('users')
-      .select('*')
-      .eq('id', req.user.id)
+      .from("users")
+      .select("*")
+      .eq("id", req.user.id)
       .single();
 
     res.json({
       user: {
         id: req.user.id,
         email: req.user.email,
-        ...profile
-      }
+        ...profile,
+      },
     });
   } catch (err) {
     logger.error(`Get me error: ${err.message}`);
-    res.status(500).json({ error: 'Failed to fetch user profile' });
+    res.status(500).json({ error: "Failed to fetch user profile" });
   }
 };
 

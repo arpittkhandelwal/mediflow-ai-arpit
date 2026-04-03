@@ -3,8 +3,8 @@
  * Symptom Checker, Patient Summary, AI Chatbot
  */
 
-const { groq, GROQ_MODEL } = require('../config/groq');
-const logger = require('../config/logger');
+const { groq, GROQ_MODEL } = require("../config/groq");
+const logger = require("../config/logger");
 
 // System prompt shared across features
 const SYSTEM_PROMPT = `You are Asha, an empathetic AI health assistant for MediFlow AI — 
@@ -16,7 +16,7 @@ Never prescribe specific medicines. Be concise and clear. Support both English a
  * Analyze symptoms and return possible conditions + urgency
  */
 const analyzeSymptoms = async ({ symptoms, age, gender }) => {
-  const userCtx = age && gender ? `Patient: ${age}y/o ${gender}.` : '';
+  const userCtx = age && gender ? `Patient: ${age}y/o ${gender}.` : "";
 
   const prompt = `${userCtx}
 Patient reports: "${symptoms}"
@@ -35,12 +35,12 @@ Respond in this EXACT JSON format:
   const completion = await groq.chat.completions.create({
     model: GROQ_MODEL,
     messages: [
-      { role: 'system', content: SYSTEM_PROMPT },
-      { role: 'user', content: prompt }
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: prompt },
     ],
     temperature: 0.3,
     max_tokens: 600,
-    response_format: { type: 'json_object' }
+    response_format: { type: "json_object" },
   });
 
   let result;
@@ -50,7 +50,9 @@ Respond in this EXACT JSON format:
     result = { raw: completion.choices[0].message.content };
   }
 
-  logger.info(`Symptom analysis completed for: ${symptoms.substring(0, 50)}...`);
+  logger.info(
+    `Symptom analysis completed for: ${symptoms.substring(0, 50)}...`,
+  );
   return result;
 };
 
@@ -58,9 +60,10 @@ Respond in this EXACT JSON format:
  * Generate AI summary of patient's medical history
  */
 const generatePatientSummary = async (medicalHistory) => {
-  const historyText = typeof medicalHistory === 'object'
-    ? JSON.stringify(medicalHistory, null, 2)
-    : medicalHistory;
+  const historyText =
+    typeof medicalHistory === "object"
+      ? JSON.stringify(medicalHistory, null, 2)
+      : medicalHistory;
 
   const prompt = `Summarize this patient's medical history in a concise, professional manner 
 for a doctor's quick reference (max 150 words). Highlight key conditions, allergies, 
@@ -69,11 +72,11 @@ and important notes:\n\n${historyText}`;
   const completion = await groq.chat.completions.create({
     model: GROQ_MODEL,
     messages: [
-      { role: 'system', content: SYSTEM_PROMPT },
-      { role: 'user', content: prompt }
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: prompt },
     ],
     temperature: 0.2,
-    max_tokens: 300
+    max_tokens: 300,
   });
 
   return completion.choices[0].message.content;
@@ -84,16 +87,16 @@ and important notes:\n\n${historyText}`;
  */
 const chat = async ({ message, conversationHistory = [] }) => {
   const messages = [
-    { role: 'system', content: SYSTEM_PROMPT },
+    { role: "system", content: SYSTEM_PROMPT },
     ...conversationHistory.slice(-10), // Keep last 10 messages for context
-    { role: 'user', content: message }
+    { role: "user", content: message },
   ];
 
   const completion = await groq.chat.completions.create({
     model: GROQ_MODEL,
     messages,
     temperature: 0.7,
-    max_tokens: 500
+    max_tokens: 500,
   });
 
   const reply = completion.choices[0].message.content;
@@ -103,9 +106,9 @@ const chat = async ({ message, conversationHistory = [] }) => {
     reply,
     updated_history: [
       ...conversationHistory,
-      { role: 'user', content: message },
-      { role: 'assistant', content: reply }
-    ]
+      { role: "user", content: message },
+      { role: "assistant", content: reply },
+    ],
   };
 };
 
@@ -122,12 +125,16 @@ ${rawText}`;
   const completion = await groq.chat.completions.create({
     model: GROQ_MODEL,
     messages: [
-      { role: 'system', content: 'You are a medical prescription parser. Extract structured data from prescription text. Return valid JSON only.' },
-      { role: 'user', content: prompt }
+      {
+        role: "system",
+        content:
+          "You are a medical prescription parser. Extract structured data from prescription text. Return valid JSON only.",
+      },
+      { role: "user", content: prompt },
     ],
     temperature: 0.1,
     max_tokens: 400,
-    response_format: { type: 'json_object' }
+    response_format: { type: "json_object" },
   });
 
   try {
@@ -137,4 +144,9 @@ ${rawText}`;
   }
 };
 
-module.exports = { analyzeSymptoms, generatePatientSummary, chat, parsePrescriptionText };
+module.exports = {
+  analyzeSymptoms,
+  generatePatientSummary,
+  chat,
+  parsePrescriptionText,
+};
