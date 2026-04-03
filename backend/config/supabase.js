@@ -8,13 +8,15 @@
 const { createClient } = require("@supabase/supabase-js");
 const logger = require("./logger");
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+let supabaseUrl = process.env.SUPABASE_URL;
+let supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+let supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  logger.error("❌ Missing Supabase environment variables!");
-  process.exit(1);
+  logger.error("❌ Missing Supabase environment variables! Starting in degraded mode.");
+  // Use dummy values to prevent crash on startup so Cloud Run can serve the frontend
+  supabaseUrl = "https://dummy.supabase.co";
+  supabaseAnonKey = "dummy-key";
 }
 
 // Standard client - for auth operations and RLS-protected queries
