@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MediFlow AI - Patient Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#dfe3e7",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f6fafe",
+                        "secondary-fixed": "#6bff8f",
+                        "on-surface": "#171c1f",
+                        "surface-container-low": "#f0f4f8",
+                        "on-primary-container": "#eeefff",
+                        "primary": "#004ac6",
+                        "on-primary-fixed": "#00174b",
+                        "on-secondary-container": "#007432",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "on-background": "#171c1f",
+                        "inverse-on-surface": "#edf1f5",
+                        "on-error-container": "#93000a",
+                        "secondary": "#006e2f",
+                        "inverse-surface": "#2c3134",
+                        "surface-dim": "#d6dade",
+                        "tertiary-fixed": "#ffdbca",
+                        "error": "#ba1a1a",
+                        "tertiary": "#8e3c00",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2563eb",
+                        "surface-container-high": "#e4e9ed",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-tertiary-fixed": "#341100",
+                        "inverse-primary": "#b4c5ff",
+                        "surface": "#f6fafe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#002109",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "surface-variant": "#dfe3e7",
+                        "surface-container": "#eaeef2",
+                        "on-tertiary-container": "#ffece5",
+                        "on-secondary-fixed-variant": "#005321",
+                        "secondary-container": "#6bff8f",
+                        "outline": "#737686",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b54e00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "background": "#f6fafe",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-fixed-variant": "#783200",
+                        "primary-fixed": "#dbe1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f6fafe; }
+        h1, h2, h3, .brand-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .tonal-shift-right { border-right: 1px solid rgba(0, 74, 198, 0.05); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#eaeef2] dark:bg-slate-900 flex flex-col py-6 space-y-2 border-r-0 tonal-shift-right font-['Plus_Jakarta_Sans'] font-medium text-sm">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-blue-700 dark:text-blue-500">MediFlow AI</h1>
+</div>
+<div class="flex-1 flex flex-col space-y-2">
+<!-- Dashboard (Active) -->
+<a class="bg-[#ffffff] dark:bg-slate-800 text-blue-700 dark:text-blue-300 rounded-full shadow-sm mx-2 py-3 px-4 flex items-center gap-3 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-2 py-3 px-4 flex items-center gap-3 hover:bg-white/60 dark:hover:bg-slate-800/60 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Patients</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-2 py-3 px-4 flex items-center gap-3 hover:bg-white/60 dark:hover:bg-slate-800/60 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>Symptom Checker</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-2 py-3 px-4 flex items-center gap-3 hover:bg-white/60 dark:hover:bg-slate-800/60 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Prescriptions</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-2 py-3 px-4 flex items-center gap-3 hover:bg-white/60 dark:hover:bg-slate-800/60 rounded-full transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-error text-on-error py-3 rounded-full font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="emergency_home">emergency_home</span>
+                Emergency SOS
+            </button>
+<div class="pt-4 border-t border-slate-300/30">
+<div class="flex items-center gap-3 px-2 py-2">
+<img alt="Doctor Profile" class="w-10 h-10 rounded-full object-cover" data-alt="professional portrait of a friendly male doctor in a white coat with a stethoscope around his neck, warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5sYw8_CdR_ukNLTnbEQ5_1Xs4m0QwLcKGqqEZqo7sSohJh3GSwy0nEN6_X7cWJsEfR9JWvURfpPTd1l8y5FXwzE2LwSb8H9AnWWvm1_pGp-SodUIBGaorIVzdAUZxtk4UHgay1E-1rmaWaqgtI4ytxWJZyuxC2r-V-BawtXUOvvopIeXTGUGZg3M2sP-zXwzwhTwPFu7HdQJWkAl6A6H_oe2oYEDAWkVibn6DHsSmLZmt1tCp60PsQMXR1STJpW_mA8HAjrmZtCU"/>
+<div>
+<p class="text-xs font-bold text-on-surface">Dr. Arjun Mehta</p>
+<p class="text-[10px] text-slate-500">Cardiologist • AI Enabled</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Header Section -->
+<header class="flex justify-between items-center mb-10">
+<div>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Namaste, Rohan! 👋</h2>
+<p class="text-on-surface-variant font-body mt-1">आपका दैनिक स्वास्थ्य विवरण | Your daily health summary is ready.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-lowest p-3 rounded-full shadow-[0_20px_40px_rgba(0,74,198,0.06)] flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-semibold pr-2">Oct 24, 2024</span>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Quick Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<!-- Upcoming Appointment -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)] flex flex-col justify-between">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-4 block">Upcoming Appointment</span>
+<div class="flex items-start gap-4">
+<img alt="Doctor" class="w-12 h-12 rounded-full object-cover" data-alt="close-up portrait of a female physician with glasses, smiling confidently in a clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF3R8Ct3u6Q4JBPJW34vH7gyTLutuD0flctn5cGqM14kZHc_qBAlCgrEqPcDg6r5YehtqkGmDorjO2FrYb9jwjpYnSEVKIIEFFjBqUVSiKtD7adFUKFr_oX1qTdHiZHGlIDuJWxlZ0ogMoEv29dCAmaoC0n1hvmdJyjzusOY-z2VUlgQiDd-bHdpd92m7hH2_SRbgE8ns9dFxB81T6iCwFyYVmbXJ5xZ2qCsm1bog7HTi8fJKBUqaaRGoVEI39ufWJG0DUVtqQ71k"/>
+<div>
+<p class="font-bold text-on-surface">Dr. Sarah Williams</p>
+<p class="text-xs text-on-surface-variant">General Physician</p>
+</div>
+</div>
+</div>
+<div class="mt-6 flex items-center justify-between bg-surface-container-low p-3 rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="schedule">schedule</span>
+<span class="text-sm font-medium">Tomorrow, 10:30 AM</span>
+</div>
+<span class="text-[10px] bg-primary/10 text-primary px-2 py-1 rounded-full font-bold">IN 18H</span>
+</div>
+</div>
+<!-- Last Health Check -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)]">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary mb-4 block">Last Health Check</span>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-3xl font-black text-on-surface">118/76</p>
+<p class="text-xs text-on-surface-variant">Blood Pressure (mmHg)</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm text-[10px] font-bold">NORMAL</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+</div>
+<!-- Prescription Status -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)] flex flex-col justify-between">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-tertiary mb-4 block">Prescription Status</span>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="medication">medication</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Active: 3 Meds</p>
+<p class="text-xs text-on-surface-variant">Next refill in 5 days</p>
+</div>
+</div>
+</div>
+<button class="mt-4 text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                    View Schedule <span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Action Hub -->
+<section class="mb-10">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                Action Hub
+                <span class="h-px flex-1 bg-surface-container-highest ml-4"></span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- AI Symptom Checker -->
+<div class="group relative overflow-hidden bg-primary p-8 rounded-lg text-on-primary shadow-xl cursor-pointer hover:scale-[1.02] transition-all">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Check Symptoms with AI</h4>
+<p class="text-sm text-on-primary-container/80 mb-6">Instant clinical-grade analysis using Asha AI.</p>
+<span class="bg-white text-primary px-6 py-2 rounded-full text-sm font-bold">Start Scan</span>
+</div>
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all"></div>
+</div>
+<!-- Scan Prescription -->
+<div class="group bg-surface-container-lowest p-8 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)] border border-transparent hover:border-primary/20 transition-all cursor-pointer">
+<div class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="document_scanner">document_scanner</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface mb-2">Scan Prescription</h4>
+<p class="text-sm text-on-surface-variant mb-6">Digitalize your physical medical records in seconds.</p>
+<span class="text-primary font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                        Upload Image <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</span>
+</div>
+<!-- Emergency SOS -->
+<div class="group bg-error-container p-8 rounded-lg shadow-[0_20px_40px_rgba(255,0,0,0.05)] cursor-pointer hover:bg-error transition-all hover:text-on-error">
+<div class="w-12 h-12 bg-error rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/20">
+<span class="material-symbols-outlined text-2xl text-on-error" data-icon="emergency" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Call Emergency SOS</h4>
+<p class="text-sm opacity-80 mb-6">Connect to nearest hospital &amp; share vitals immediately.</p>
+<span class="font-black tracking-widest uppercase text-xs">Activate Now</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Health Trends Chart (Simulated) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)]">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h4 class="text-xl font-bold text-on-surface">Health Trends</h4>
+<p class="text-sm text-on-surface-variant">Weekly Heart Rate Variability</p>
+</div>
+<select class="bg-surface-container border-none rounded-full text-xs font-bold px-4 py-2 focus:ring-primary">
+<option>Last 7 Days</option>
+<option>Last Month</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 px-4">
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-3/4">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-2/3 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">MON</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-full">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-4/5 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">TUE</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-2/3">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-1/2 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">WED</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-5/6">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-3/4 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">THU</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-3/4">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-2/3 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">FRI</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-full">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-5/6 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">SAT</span>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-4/5">
+<div class="absolute inset-x-0 bottom-0 bg-primary h-1/2 rounded-t-lg transition-all group-hover:h-full"></div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-slate-400">SUN</span>
+</div>
+</div>
+</div>
+<!-- Upcoming List -->
+<div class="bg-surface-container-lowest p-8 rounded-lg shadow-[0_20px_40px_rgba(0,74,198,0.06)]">
+<h4 class="text-xl font-bold text-on-surface mb-6">Upcoming Events</h4>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="flex flex-col items-center justify-center min-w-[3rem] h-12 bg-surface-container-high rounded-xl">
+<span class="text-[10px] font-bold text-primary">OCT</span>
+<span class="text-lg font-black leading-none">25</span>
+</div>
+<div>
+<p class="font-bold text-sm">Full Body Checkup</p>
+<p class="text-xs text-on-surface-variant">Apollo Hospital, New Delhi</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="flex flex-col items-center justify-center min-w-[3rem] h-12 bg-surface-container-high rounded-xl">
+<span class="text-[10px] font-bold text-primary">OCT</span>
+<span class="text-lg font-black leading-none">28</span>
+</div>
+<div>
+<p class="font-bold text-sm">Lab Results Ready</p>
+<p class="text-xs text-on-surface-variant">Thyroid Panel (AI Review)</p>
+</div>
+</div>
+<div class="flex gap-4 items-start opacity-50">
+<div class="flex flex-col items-center justify-center min-w-[3rem] h-12 bg-surface-container-high rounded-xl">
+<span class="text-[10px] font-bold text-primary">NOV</span>
+<span class="text-lg font-black leading-none">02</span>
+</div>
+<div>
+<p class="font-bold text-sm">Follow-up Call</p>
+<p class="text-xs text-on-surface-variant">Dr. Arjun Mehta</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 border-2 border-primary/20 text-primary py-3 rounded-full font-bold hover:bg-primary/5 active:scale-95 transition-all">
+                    View Full Calendar
+                </button>
+</div>
+</div>
+</main>
+<!-- Asha AI Assistant Orb -->
+<div class="fixed bottom-8 right-8 z-[100] group">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+<button class="relative w-16 h-16 bg-gradient-to-br from-primary to-primary-container rounded-full shadow-[0_10px_30px_rgba(0,74,198,0.3)] flex items-center justify-center text-white overflow-hidden active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome">auto_awesome</span>
+<div class="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<div class="absolute bottom-full right-0 mb-4 bg-surface-container-lowest p-4 rounded-xl shadow-xl w-64 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all translate-y-2 group-hover:translate-y-0">
+<p class="text-xs font-bold text-primary mb-1 uppercase tracking-tighter">Asha AI Helper</p>
+<p class="text-sm font-medium text-on-surface">"नमस्ते Rohan! Looking for help with your reports?"</p>
+</div>
+</div>
+<!-- Footer -->
+<footer class="ml-64 w-auto py-12 px-8 bg-[#f6fafe] dark:bg-slate-950 tonal-shift-top bg-slate-200/30 dark:bg-slate-800/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<h5 class="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4">MediFlow AI</h5>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500">© 2024 MediFlow AI. Care with Empathy. नमस्ते।</p>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Resources</h6>
+<ul class="space-y-2 font-['Inter'] text-xs uppercase tracking-widest">
+<li><a class="text-slate-500 hover:underline decoration-blue-500 decoration-2 underline-offset-4 transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:underline decoration-blue-500 decoration-2 underline-offset-4 transition-opacity" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Support</h6>
+<ul class="space-y-2 font-['Inter'] text-xs uppercase tracking-widest">
+<li><a class="text-slate-500 hover:underline decoration-blue-500 decoration-2 underline-offset-4 transition-opacity" href="#">Healthcare Ethics</a></li>
+<li><a class="text-slate-500 hover:underline decoration-blue-500 decoration-2 underline-offset-4 transition-opacity" href="#">India Access</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Contact</h6>
+<ul class="space-y-2 font-['Inter'] text-xs uppercase tracking-widest">
+<li><a class="text-slate-500 hover:underline decoration-blue-500 decoration-2 underline-offset-4 transition-opacity" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

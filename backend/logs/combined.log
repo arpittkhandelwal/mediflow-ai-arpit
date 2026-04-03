@@ -1,0 +1,89 @@
+2026-04-03 15:55:02 [info]: ✅ Supabase clients initialized
+2026-04-03 15:55:03 [info]: ✅ Groq AI client initialized with model: llama-3.3-70b-versatile
+2026-04-03 15:55:03 [info]: 🚀 MediFlow AI Backend running on port 5000
+2026-04-03 15:55:03 [info]: 📊 Environment: development
+2026-04-03 15:55:03 [info]: 🔗 Health check: http://localhost:5000/health
+2026-04-03 15:55:18 [info]: ::1 - - [03/Apr/2026:10:25:18 +0000] "GET /health HTTP/1.1" 200 137 "-" "curl/8.7.1"
+2026-04-03 15:55:37 [info]: ::1 - - [03/Apr/2026:10:25:37 +0000] "GET / HTTP/1.1" 404 53 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:55:37 [info]: ::1 - - [03/Apr/2026:10:25:37 +0000] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 85 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari"
+2026-04-03 15:55:37 [info]: ::1 - - [03/Apr/2026:10:25:37 +0000] "GET /apple-touch-icon.png HTTP/1.1" 404 73 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari"
+2026-04-03 15:55:37 [info]: ::1 - - [03/Apr/2026:10:25:37 +0000] "GET /favicon.ico HTTP/1.1" 404 64 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari"
+2026-04-03 15:56:39 [info]: ::1 - - [03/Apr/2026:10:26:39 +0000] "GET / HTTP/1.1" 404 53 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:58:09 [info]: ::1 - - [03/Apr/2026:10:28:09 +0000] "GET /health HTTP/1.1" 200 137 "-" "curl/8.7.1"
+2026-04-03 15:58:30 [info]: ::1 - - [03/Apr/2026:10:28:30 +0000] "GET /doctor/all HTTP/1.1" 200 14 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:23 [info]: ::1 - - [03/Apr/2026:10:29:23 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:23 [info]: ::1 - - [03/Apr/2026:10:29:23 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:27 [info]: ::1 - - [03/Apr/2026:10:29:27 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:27 [info]: ::1 - - [03/Apr/2026:10:29:27 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:29 [info]: ::1 - - [03/Apr/2026:10:29:29 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 15:59:29 [info]: ::1 - - [03/Apr/2026:10:29:29 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:16:53 [info]: ✅ Supabase clients initialized
+2026-04-03 16:16:53 [info]: ✅ Groq AI client initialized with model: llama-3.3-70b-versatile
+2026-04-03 16:16:53 [info]: 🚀 MediFlow AI Backend running on port 5000
+2026-04-03 16:16:53 [info]: 📊 Environment: development
+2026-04-03 16:16:53 [info]: 🔗 Health check: http://localhost:5000/health
+2026-04-03 16:17:16 [warn]: Signup failed for arpit@gmail.com: User not allowed
+2026-04-03 16:17:16 [info]: ::1 - - [03/Apr/2026:10:47:16 +0000] "POST /auth/signup HTTP/1.1" 400 28 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:17:19 [warn]: Signup failed for arpit@gmail.com: User not allowed
+2026-04-03 16:17:19 [info]: ::1 - - [03/Apr/2026:10:47:19 +0000] "POST /auth/signup HTTP/1.1" 400 28 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:15 [warn]: Signup failed for arpit@gmail.com: User not allowed
+2026-04-03 16:18:15 [info]: ::1 - - [03/Apr/2026:10:48:15 +0000] "POST /auth/signup HTTP/1.1" 400 28 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:22 [info]: ✅ Supabase clients initialized
+2026-04-03 16:18:23 [info]: ✅ Groq AI client initialized with model: llama-3.3-70b-versatile
+2026-04-03 16:18:23 [info]: 🚀 MediFlow AI Backend running on port 5000
+2026-04-03 16:18:23 [info]: 📊 Environment: development
+2026-04-03 16:18:23 [info]: 🔗 Health check: http://localhost:5000/health
+2026-04-03 16:18:35 [warn]: Signup failed for arpit@gmail.com: Email address "arpit@gmail.com" is invalid
+2026-04-03 16:18:35 [info]: ::1 - - [03/Apr/2026:10:48:35 +0000] "POST /auth/signup HTTP/1.1" 400 56 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:48 [error]: Profile creation failed: new row violates row-level security policy for table "users"
+2026-04-03 16:18:49 [info]: ✅ New patient registered: arpitkhandelwal@gmail.com
+2026-04-03 16:18:49 [info]: ::1 - - [03/Apr/2026:10:48:49 +0000] "POST /auth/signup HTTP/1.1" 201 178 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:49 [info]: ::1 - - [03/Apr/2026:10:48:49 +0000] "GET /patient/profile HTTP/1.1" 401 45 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:49 [info]: ::1 - - [03/Apr/2026:10:48:49 +0000] "GET /patient/history HTTP/1.1" 401 45 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:18:49 [info]: ::1 - - [03/Apr/2026:10:48:49 +0000] "GET /patient/reminders HTTP/1.1" 401 45 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:19:39 [info]: ::1 - - [03/Apr/2026:10:49:39 +0000] "GET /doctor/all HTTP/1.1" 200 14 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:07 [error]: Profile creation failed: new row violates row-level security policy for table "users"
+2026-04-03 16:20:10 [info]: ✅ New patient registered: test@gmail.com
+2026-04-03 16:20:10 [info]: ::1 - - [03/Apr/2026:10:50:10 +0000] "POST /auth/signup HTTP/1.1" 201 3271 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:18 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:18 [info]: ::1 - - [03/Apr/2026:10:50:18 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:18 [info]: ::1 - - [03/Apr/2026:10:50:18 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:19 [info]: ::1 - - [03/Apr/2026:10:50:19 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:30 [info]: ::1 - - [03/Apr/2026:10:50:30 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:37 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:37 [info]: ::1 - - [03/Apr/2026:10:50:37 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:40 [info]: ::1 - - [03/Apr/2026:10:50:40 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:41 [info]: ::1 - - [03/Apr/2026:10:50:41 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:41 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:41 [info]: ::1 - - [03/Apr/2026:10:50:41 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:41 [info]: ::1 - - [03/Apr/2026:10:50:41 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:41 [info]: ::1 - - [03/Apr/2026:10:50:41 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:57 [info]: ::1 - - [03/Apr/2026:10:50:57 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:57 [info]: ::1 - - [03/Apr/2026:10:50:57 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:57 [info]: ::1 - - [03/Apr/2026:10:50:57 +0000] "POST /emergency/sos HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:57 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:57 [info]: ::1 - - [03/Apr/2026:10:50:57 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:20:57 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:57 [info]: ::1 - - [03/Apr/2026:10:50:57 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:04 [info]: ::1 - - [03/Apr/2026:10:51:04 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:09 [info]: ::1 - - [03/Apr/2026:10:51:09 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:45 [info]: Symptom analysis completed for: I have fever, headache...
+2026-04-03 16:21:47 [info]: ::1 - - [03/Apr/2026:10:51:47 +0000] "POST /ai/symptoms HTTP/1.1" 200 559 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:54 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:21:54 [info]: ::1 - - [03/Apr/2026:10:51:54 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:55 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:21:55 [info]: ::1 - - [03/Apr/2026:10:51:55 +0000] "GET /patient/profile HTTP/1.1" 500 43 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:55 [info]: ::1 - - [03/Apr/2026:10:51:55 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:55 [info]: ::1 - - [03/Apr/2026:10:51:55 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:55 [info]: ::1 - - [03/Apr/2026:10:51:55 +0000] "GET /patient/reminders HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:21:55 [info]: ::1 - - [03/Apr/2026:10:51:55 +0000] "GET /patient/history HTTP/1.1" 404 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 200 37 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:14 [info]: ::1 - - [03/Apr/2026:10:52:14 +0000] "POST /auth/logout HTTP/1.1" 429 69 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:15 [info]: ::1 - - [03/Apr/2026:10:52:15 +0000] "GET /doctor/all HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"
+2026-04-03 16:22:15 [warn]: Auth failed: Auth session missing!
+2026-04-03 16:22:15 [info]: ::1 - - [03/Apr/2026:10:52:15 +0000] "POST /auth/logout HTTP/1.1" 401 58 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15"

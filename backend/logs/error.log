@@ -1,0 +1,9 @@
+2026-04-03 16:18:48 [error]: Profile creation failed: new row violates row-level security policy for table "users"
+2026-04-03 16:20:07 [error]: Profile creation failed: new row violates row-level security policy for table "users"
+2026-04-03 16:20:18 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:37 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:41 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:57 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:20:57 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:21:54 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
+2026-04-03 16:21:55 [error]: Get patient profile error: Cannot coerce the result to a single JSON object
