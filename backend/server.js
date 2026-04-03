@@ -112,6 +112,12 @@ app.use(
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // =====================================
+// Serve Frontend App (Production)
+// =====================================
+const frontendPath = path.join(__dirname, "../frontend-app/dist");
+app.use(express.static(frontendPath));
+
+// =====================================
 // Health Check
 // =====================================
 app.get("/health", (req, res) => {
@@ -136,6 +142,26 @@ app.use("/reports", reportRoutes);
 app.use("/emergency", emergencyRoutes);
 app.use("/ai", aiLimiter, aiRoutes);
 app.use("/scan-prescription", aiLimiter, ocrRoutes);
+
+// =====================================
+// 404 Handler / Frontend Fallback
+// =====================================
+app.get("*", (req, res) => {
+  // If request is an API request that wasn't found, return JSON 404
+  if (req.path.startsWith("/auth") || req.path.startsWith("/patient") || 
+      req.path.startsWith("/doctor") || req.path.startsWith("/appointments") || 
+      req.path.startsWith("/prescriptions") || req.path.startsWith("/reports") || 
+      req.path.startsWith("/emergency") || req.path.startsWith("/ai") || 
+      req.path.startsWith("/scan-prescription")) {
+    return res.status(404).json({
+      error: "Route not found",
+      path: req.path,
+      method: req.method,
+    });
+  }
+  // Otherwise, fallback to serving the frontend React index.html
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 // =====================================
 // 404 Handler
